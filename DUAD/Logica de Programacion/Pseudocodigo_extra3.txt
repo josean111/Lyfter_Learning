@@ -1,0 +1,69 @@
+Cree un algoritmo que le pregunte al usuario por el sexo de 6 personas, ingresando 1 si es mujer o 2
+si es hombre, y muestre al final el porcentaje de mujeres y hombres.
+Ejemplos:
+1, 1, 1, 2, 2, 2 → 50% mujeres y 50% hombres
+1, 1, 2, 2, 2, 2 → 33.3% mujeres y 66.6% hombres
+1, 1, 1, 1, 1, 2 → 83.3% mujeres y 16.6% hombres
+1. Inicio
+2. Definir sexo
+3. Definir contador
+4. Definir cantidad_mujeres
+5. Definir cantidad_hombres
+6. Definir porcentaje_mujeres
+7. Definir porcentaje_hombres
+8. contador = 1
+9. cantidad_mujeres = 0
+10.cantidad_hombres = 0
+11. Mientras que (contador <= 6) repetir:
+a. Mostrar “Ingrese el sexo de la persona”
+b. Mostrar “Ingrese 1 si es mujer o 2 si es hombre”
+c. Pedir sexo
+d. Si (sexo == 1) entonces:
+i. cantidad_mujeres = cantidad_mujeres + 1
+e. Sino
+i. cantidad_hombres = cantidad_hombres + 1
+f. FinSi
+g. contador = contador + 1
+12.FinMientras
+13.porcentaje_mujeres = cantidad_mujeres * 100 / 6
+14.porcentaje_hombres = cantidad_hombres * 100 / 6
+15.Mostrar “El porcentaje de mujeres es”
+16.Mostrar porcentaje_mujeres
+17.Mostrar “El porcentaje de hombres es”
+18.Mostrar porcentaje_hombres
+19.Fin
+Queria agregar uno mas en caso que la persona se equivocara y no pusiera ni 1 ni 2
+190 y 305
+1. Inicio
+2. Definir sexo
+3. Definir contador
+4. Definir cantidad_mujeres
+5. Definir cantidad_hombres
+6. Definir porcentaje_mujeres
+7. Definir porcentaje_hombres
+8. contador = 1
+9. cantidad_mujeres = 0
+10.cantidad_hombres = 0
+11. Mientras que (contador <= 6) repetir:
+a. Mostrar “Ingrese el sexo de la persona”
+b. Mostrar “Ingrese 1 si es mujer o 2 si es hombre”
+c. Pedir sexo
+d. Si (sexo == 1) entonces:
+i. cantidad_mujeres = cantidad_mujeres + 1
+e. Sino
+i. Si (sexo == 2) entonces:
+1. cantidad_hombres = cantidad_hombres + 1
+ii. Sino
+1. Mostrar “Dato invalido”
+2. contador = contador - 1 #Asi respite y un msj corto
+iii. FinSi
+f. FinSi
+g. contador = contador + 1
+12.FinMientras
+13.porcentaje_mujeres = cantidad_mujeres * 100 / 6
+14.porcentaje_hombres = cantidad_hombres * 100 / 6
+15.Mostrar “El porcentaje de mujeres es”
+16.Mostrar porcentaje_mujeres
+17.Mostrar “El porcentaje de hombres es”
+18.Mostrar porcentaje_hombres
+19.Fin
