@@ -1,0 +1,57 @@
+Cree un algoritmo como preparar una fiesta sorpresa para un amigo o familiar. Considere si la
+persona está en casa o no, si los invitados ya llegaron o no, qué hacer mientras esperan, y cómo
+finaliza la fiesta.
+1. Inicio
+2. Elegir el día y la hora de la fiesta
+3. Elegir el lugar donde se realizará la fiesta
+4. Preparar la lista de invitados
+5. Invitar a los familiares y amigos
+6. Confirmar la asistencia de los invitados
+7. Preparar la decoración
+8. Preparar la comida y las bebidas
+9. Comprar el pastel
+10. Si hay regalos
+a. Esconderlos del amigo o familiar
+11. Si no ha regalos
+a. Comprar los regalos
+b. Preparar los regalos
+12. Revisar si la persona que recibirá la sorpresa está en casa
+13. Si la persona está en casa:
+a. Buscar una forma de sacarla de la casa sin levantar sospechas
+b. Esperar hasta que la persona salga de la casa
+14. Sino esta en casa
+a. Empezar a preparar la fiesta
+b. Colocar la decoración
+c. Colocar la comida y las bebidas
+d. Colocar el pastel
+15. Revisar si los invitados ya llegaron
+16. Mientras los invitados no hayan llegado:
+a. Esperar a que lleguen los invitados
+b. Recibir a los invitados que vayan llegando
+c. Indicarles dónde esperar
+d. Recordarles que deben mantener la sorpresa en secreto
+17. Revisar si la persona que recibirá la sorpresa ya está cerca
+18. Mientras la persona no esté cerca:
+a. Esperar a que la persona se acerque
+b. Revisar que los invitados estén preparados
+c. Mantener la sorpresa en secreto
+19. Si la persona ya está cerca y los invitados ya llegaron:
+a. Apagar las luces
+b. Esconderse
+c. Esperar a que la persona entre
+d. Gritar Sorpresa!!
+e. Encender las luces
+f. Celebrar la fiesta
+20. Comer y compartir con los invitados
+21. Entregar el pastel
+22. Si la fiesta es de cumpleaños:
+a. Cantar cumpleaños
+b. Pedir a la persona que sople las velas
+23. Si hay regalos:
+a. Entregar los regalos
+b. Esperar mientras la persona abre los regalos
+24.Terminar la fiesta
+25. Despedir a los invitados
+26. Recoger y limpiar el lugar
+27. Guardar lo que se pueda reutilizar
+28. Fin

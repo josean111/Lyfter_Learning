@@ -1,0 +1,73 @@
+Cree un algoritmo de como se prepara para ir a su viaje de diversión favorito.
+Inicio
+1. Inicio
+2. Elegir el lugar que quiero visitar
+3. Revisar el costo aproximado del viaje
+4. Revisar el presupuesto disponible
+5. Elegir una fecha tentativa
+6. Revisar el clima esperado para la fecha elegida
+7. Mientras no tenga una fecha y un presupuesto adecuados para el viaje
+a. Si no tengo suficiente dinero para el viaje
+i. Elegir una fecha posterior
+b. Si el clima no es adecuado para las actividades que quiero realizar
+i. Elegir otra fecha
+c. Revisar nuevamente el costo aproximado del viaje
+d. Revisar el presupuesto disponible
+e. Revisar el clima esperado para la fecha elegida
+8. Revisar el medio de transporte que voy a utilizar
+9. Si voy a viajar en vehículo propio
+a. Si el vehículo tiene suficiente combustible
+i. Preparar el vehículo para el viaje
+b. Sino
+i. Comprar combustible
+ii. Preparar el vehículo para el viaje
+10.Sino, si voy a viajar en avión
+a. Comprar los boletos de avión necesarios
+b. Revisar el transporte que utilizaré en el lugar de destino
+c. Si voy a alquilar un vehículo
+i. Reservar el vehículo de alquiler
+d. Sino, si voy a utilizar transporte público
+i. Revisar las rutas y horarios disponibles
+e. Sino, si voy a utilizar taxi o Uber
+i. Revisar la disponibilidad y el costo aproximado del servicio
+11. Sino, si voy a viajar en transporte público
+a. Comprar los boletos necesarios
+12.Sino, si voy a utilizar taxi o Uber
+a. Revisar la disponibilidad y el costo aproximado del servicio
+13.Sino
+a. Revisar otra opción de transporte
+14.Reservar el hospedaje si es necesario
+15.Preparar la ropa que voy a utilizar
+16.Preparar los artículos personales
+17.Preparar los documentos necesarios
+18.Preparar el celular y el cargador
+19.Revisar el pronóstico del clima
+20.Si hay posibilidad de lluvia
+a. Empacar un paraguas o impermeable
+21.Si voy a realizar actividades al aire libre
+a. Empacar ropa y artículos adecuados para esas actividades
+22.Revisar que todo esté empacado
+23.Mientras falte algún artículo necesario
+a. Preparar y colocar lo que haga falta
+b. Revisar que todo esté empacado
+24.Revisar que tenga los documentos, dinero, celular y cargador
+25.Si tengo todo lo necesario
+a. Salir de la casa el día del viaje
+26.Sino
+a. Preparar lo que haga falta
+27.Revisar nuevamente que tenga los documentos, dinero, celular y cargador
+28.Utilizar al medio de transporte seleccionado
+29.Viajar o disfrutar del viaje hasta el lugar de destino
+30.Llegar al lugar
+31.Realizar las actividades planeadas
+32.Divertirme!!!
+33.Disfrutar del viaje
+34.Finalizar las actividades del viaje
+35.Recoger las pertenencias
+36.Prepararse para regresar a casa
+37.Utilizar el medio de transporte seleccionado para regresar
+38.Viajar de regreso a casa
+39.Llegar a casa
+40.Guardar las pertenencias
+41.Revisar que no haya olvidado ningún objeto
+42.Fin
