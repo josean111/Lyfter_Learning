@@ -1,0 +1,33 @@
+Cree un algoritmo para ver un video en Youtube. Sea lo más especifico posible.
+1. Inicio
+2. Obtener un dispositivo electrónico que permita visualizar el contenido de YouTube
+3. Buscar un ambiente que permita la conexión a internet
+4. Obtener un cable o conector para electricidad
+5. Si mi dispositivo necesita carga
+a. Conectar el cable de poder y cargarlo
+6. Si tengo celular/tablet y tambien WiFi
+a. Conectar mi celular/tablet a internet WiFi
+7. Sino si tengo computadora y también internet WiFi
+a. Conectar mi computadora a internet WiFi
+8. Si no, si tengo computadora y cable ethernet
+a. Conectar mi computadora con cable ethernet
+9. Si mi dispositivo tiene la aplicación de YouTube instalada abrirla
+a. En la barra de busqueda escribir el nombre o categoría del video que deseamos
+visualizar
+b. Presionar el botón de búsqueda
+c. Buscar el video que queremos visualizar
+d. Si lo encontramos
+i. Reproducir el video
+e. Si no lo encontramos
+i. Volver al paso 9.a
+10. Si no abrir algun navegador de internet en el dispositivo
+a. Dirigirse al sitio www.youtube.com
+b. En la barra de busqueda escribir el nombre o categoría del video que deseamos
+visualizar
+c. Presionar el botón de búsqueda
+d. Buscar el video que queremos visualizar
+e. Si lo encontramos
+i. Reproducir el video
+f. Si no lo encontramos
+i. Volver al paso 10.b
+11. Fin
