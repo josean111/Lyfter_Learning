@@ -9,16 +9,17 @@
 # "No se pudo convertir el elemento: hola"
 # "10" "convertido a" 10
 # "No se pudo convertir el elemento: 5.2"
-my_list = ['4', 'hola', '10', '5.2']
+
+my_list = ['004', 'hola', '10', '5.2']
 def int_to_list(string_list):
     new_list = "Resultado:\n"
     for element in string_list:
         try:
             int_number = int(element)
         except ValueError:
-            new_list += "No se pudo convertir el elemento: "+element+"\n"
+            new_list += f"No se pudo convertir el elemento: {element}\n"
             continue
-        new_list += '"'+element+'" "convertido a" '+element+'\n'
+        new_list += f'"{element}" "convertido a" {int_number}\n'
     return new_list
 
 if __name__ == '__main__':
