@@ -1,0 +1,111 @@
+Cree un algoritmo que describa su rutina diaria. Use condiciones, condiciones múltiples y ciclos.
+1. Inicio
+2. Levantarme de la cama
+3. Revisar el bulto de las niñas
+4. Si falta algún cuaderno o libro o material de clase o merienda o botella de agua
+a. Preparar y colocar lo que haga falta
+b. Preparar el desayuno y las meriendas
+5. Alistar los uniformes
+6. Subir al vehículo con las niñas
+7. Viajar hasta el lugar donde las recoge la buseta
+8. Mientras la buseta no llegue
+a. Esperar la llegada de la buseta
+9. Si la buseta llego
+a. Entregar las niñas para que se vayan a la escuela
+10. Subir al vehículo y viajar de regreso a la casa
+11. Llenar una botella de agua
+12. Colocar el celular en un lugar donde pueda revisar las notificaciones
+13. Conectar los audífonos
+14. Ponerse los audífonos
+15. Revisar que los audífonos y el micrófono funcionen correctamente
+16. Si los audífonos funcionan y el micrófono está cerca de mi boca
+a. Iniciar la clase
+17. Sino Mientras los audífonos no funcionan
+a. Revisar y ajustar los audífonos y el micrófono
+b. Revisar que los audífonos y el micrófono funcionen correctamente
+c. Iniciar la clase
+18. Mientras la clase no haya terminado
+a. Escuchar a los alumnos
+b. Explicar el contenido
+c. Responder preguntas
+d. Realizar las actividades correspondientes
+e. Si han pasado aproximadamente dos horas
+i. Hacer una pausa
+ii. Si tengo hambre
+1. Comer una merienda
+iii. Si necesito tomar agua
+1. Tomar agua
+iv. Si necesito ir al baño
+1. Ir al baño
+f. Si es alrededor del mediodía
+i. Hacer una pausa de una hora para almorzar
+ii. Si tengo tiempo y deseo cocinar
+1. Preparar el almuerzo
+iii. Sino
+1. Preparar un sándwich u otra comida que no necesite cocinar
+2. Comer la comida preparada
+iv. Si necesito tomar agua
+1. Tomar agua
+v. Si necesito ir al baño
+1. Ir al baño
+vi. Regresar a la clase
+g. Si han pasado aproximadamente dos horas después de mediodía
+i. Hacer una pausa
+ii. Si tengo hambre
+1. Comer una merienda
+iii. Si necesito tomar agua
+1. Tomar agua
+iv. Si necesito ir al baño
+1. Ir al baño
+19. Dar las últimas instrucciones
+20. Finalizar la clase
+21. Subir al vehículo
+22. Viajar hasta el lugar donde se recogen las niñas
+23. Mientras la buseta no llegue
+a. Esperar la llegada de la buseta
+24. Si la buseta llega
+a. Recoger a las niñas
+25. Subir al vehículo con las niñas
+26. Viajar de regreso a la casa
+27. Bajar del vehículo con las niñas
+28. Preparar una cena ligera
+29. Cenar
+30. Revisar si las niñas tienen tareas o algún pendiente para el día siguiente
+31. Mientras tengan tareas pendientes
+a. Realizar una tarea
+b. Revisar la tarea
+c. Revisar si tienen otras tareas pendientes
+32. Revisar si hay que hacer alguna compra
+33. Si hay que hacer alguna compra
+a. Realizar la compra pendiente
+34. Si no se pudo completar la compra
+a. Anotar la compra pendiente
+35. Revisar los uniformes
+36. Si los uniformes están sucios
+a. Lavar los uniformes
+b. Secar los uniformes
+c. Doblar los uniformes
+d. Dejarlos preparados para el día siguiente
+37. Sino, si hay otros uniformes disponibles
+a. Prepararlos para el día siguiente
+38. Revisar que los bultos estén preparados
+39. Si falta algún cuaderno o libro o material de clase
+a. Preparar y colocar lo que haga falta
+40. Enviar a las niñas a dormir a las 8pm
+41. Iniciar mi sesión de aprendizaje en la plataforma Lyfter
+42. Revisar el contenido de aprendizaje
+43. Mientras tenga actividades pendientes
+a. Leer las instrucciones
+b. Realizar la actividad
+c. Revisar la actividad
+d. Enviar la actividad
+e. Si el contenido incluye un video
+i. Ver el video
+f. Si estoy cansado
+i. Tomar un descanso corto
+44. Cuando termine todas las actividades
+45. Revisar que las tareas hayan sido enviadas
+46. Cerrar la plataforma Lyfter
+47. Apagar la computadora
+48. Acostarme a dormir
+49. Fin
