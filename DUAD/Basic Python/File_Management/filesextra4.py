@@ -8,6 +8,15 @@
 # Salida:
 # "El texto se agrega al final del archivo sin borrar lo anterior"
 
-text = input("Dame una línea de texto: ")
-with open("line_at_the_end.txt", 'a', encoding='utf-8') as file:     
-    file.write(text+"\n")
+APPEND_FILE = "line_at_the_end.txt"
+
+def append_to_file(file_path):
+    text = input("Dame una línea de texto: ")
+    with open(file_path, "a", encoding="utf-8") as file:
+        file.write(text + "\n")
+
+def main():
+    append_to_file(APPEND_FILE)
+
+if __name__ == "__main__":
+    main()

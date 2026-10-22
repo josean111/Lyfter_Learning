@@ -14,16 +14,28 @@
 
 # HOLA MUNDO
 # ESTO ES PYTHON
+INPUT_FILE = "quijote.txt"
+OUTPUT_FILE = "UPPER_quijote.txt"
 
-with open("quijote.txt", 'r', encoding='utf-8') as file:
-    new_text = ""
-    while True:
-        line = file.readline()
-        if not line:
-            break
-        new_text += line.upper()
+def read_file(file_path):
+    with open(file_path, "r", encoding="utf-8") as file:
+        new_text = ""
+        while True:
+            line = file.readline()
+            if not line:
+                break
+            new_text += line.upper()
 
-# with open("UPPER_quijote.txt", 'w', encoding='utf-8') as file:
-#     file.write(new_text)
-# To avoid creating new file :)
+    return new_text
 
+
+def write_file(file_path, new_text):
+    with open(file_path, "w", encoding="utf-8") as file:
+        file.write(new_text)
+
+def main():
+    new_text = read_file(INPUT_FILE)
+    write_file(OUTPUT_FILE, new_text)
+
+if __name__ == "__main__":
+    main()

@@ -4,6 +4,7 @@
 # Muestre todos los videojuegos que tengan esa clasificación
 
 import csv
+INPUT_FILE = "new_videogames_ranking.csv"
 
 def read_games(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
@@ -11,10 +12,16 @@ def read_games(file_path):
         header = next(reader)
         to_check = input("Give me a videogame Rating: ")
         for line in reader:
-            if line[3].lower == to_check.lower:
+            if line[3].lower() == to_check.lower():
                 print(f"Name: {line[0]}")
                 print(f"Genre: {line[1]}") 
                 print(f"Developer: {line[2]}") 
                 print(f"Rating: {line[3]}") 
                 print()
-read_games('new_videogames_ranking.csv')
+
+def main():
+    read_games(INPUT_FILE)
+
+
+if __name__ == "__main__":
+    main()

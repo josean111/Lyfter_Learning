@@ -11,6 +11,7 @@
 # ...
 
 import csv
+INPUT_FILE = "new_videogames_ranking.csv"
 
 def read_games(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
@@ -25,7 +26,12 @@ def read_games(file_path):
             else:
                 genres[genre] = 1
     print("Genre Totals:")
-    for genre in sorted(genres):
+    #for genre in sorted(genres):
+    for genre in sorted(genres, key=genres.get, reverse=True):
         print(f"{genre}: {genres[genre]}")
 
-read_games('new_videogames_ranking.csv')
+def main():
+    read_games(INPUT_FILE)
+
+if __name__ == "__main__":
+    main()
