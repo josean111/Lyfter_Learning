@@ -9,6 +9,7 @@
 # - Rayman Legends (Clasificación: E, Género: Plataforma)
 
 import csv
+INPUT_FILE = "new_videogames_ranking.csv"
 
 def read_games(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
@@ -23,4 +24,8 @@ def read_games(file_path):
             if line[2].lower() == developer.lower():
                 print(f"- {line[0]} (Rating: {line[3]}, Genre: {line[1]})")
 
-read_games('new_videogames_ranking.csv')
+def main():
+    read_games(INPUT_FILE)
+
+if __name__ == "__main__":
+    main()
