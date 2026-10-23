@@ -8,8 +8,12 @@ import json
 JSON_FILE = "pokemon_list.json"
 
 def read_pokemon(file_path):
-    with open(file_path, 'r', encoding='utf-8') as file:
-        pokemon_list = json.load(file)
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            pokemon_list = json.load(file)
+    except FileNotFoundError:
+        print(f"Error: File '{file_path}' does not exist.")
+        return []
 
     for pokemon in pokemon_list:
         print(pokemon)
@@ -19,6 +23,8 @@ def read_pokemon(file_path):
 
 def add_pokemon(file_path):
     pokemon_list = read_pokemon(file_path)
+    if not pokemon_list:
+        return
 
     print("\nAdd a new Pokemon")
 

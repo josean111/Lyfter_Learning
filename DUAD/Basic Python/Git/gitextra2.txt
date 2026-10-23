@@ -1,0 +1,84 @@
+PS C:\Users\Admin\Desktop\Git\Lyfter_Learning\DUAD\Basic Python> cd .\Git\
+PS C:\Users\Admin\Desktop\Git\Lyfter_Learning\DUAD\Basic Python\Git> ls
+
+
+    Directory: C:\Users\Admin\Desktop\Git\Lyfter_Learning\DUAD\Basic Python\Git
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        10/22/2026   2:19 AM           5216 historial_cambios.txt
+
+
+PS C:\Users\Admin\Desktop\Git\Lyfter_Learning\DUAD\Basic Python\Git> mkdir Ejercicios_Extra_Git
+
+
+    Directory: C:\Users\Admin\Desktop\Git\Lyfter_Learning\DUAD\Basic Python\Git
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        10/22/2026   2:21 AM                Ejercicios_Extra_Git
+
+
+PS C:\Users\Admin\Desktop\Git\Lyfter_Learning\DUAD\Basic Python\Git> cd .\Ejercicios_Extra_Git\
+PS C:\Users\Admin\Desktop\Git\Lyfter_Learning\DUAD\Basic Python\Git\Ejercicios_Extra_Git> touch prueba.txt
+touch : The term 'touch' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and
+try again.
+At line:1 char:1
++ touch prueba.txt
++ ~~~~~
+    + CategoryInfo          : ObjectNotFound: (touch:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Admin\Desktop\Git\Lyfter_Learning\DUAD\Basic Python\Git\Ejercicios_Extra_Git> Set-Content -Path "prueba.txt" -Value "Este es un mensaje de prueba para Git."
+PS C:\Users\Admin\Desktop\Git\Lyfter_Learning\DUAD\Basic Python\Git\Ejercicios_Extra_Git> ls
+
+
+    Directory: C:\Users\Admin\Desktop\Git\Lyfter_Learning\DUAD\Basic Python\Git\Ejercicios_Extra_Git
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        10/22/2026   2:23 AM             40 prueba.txt
+
+
+PS C:\Users\Admin\Desktop\Git\Lyfter_Learning\DUAD\Basic Python\Git\Ejercicios_Extra_Git>
+PS C:\Users\Admin\Desktop\Git\Lyfter_Learning\DUAD\Basic Python\Git\Ejercicios_Extra_Git> ls
+
+
+    Directory: C:\Users\Admin\Desktop\Git\Lyfter_Learning\DUAD\Basic Python\Git\Ejercicios_Extra_Git
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        10/22/2026   2:23 AM             40 prueba.txt
+
+
+PS C:\Users\Admin\Desktop\Git\Lyfter_Learning\DUAD\Basic Python\Git\Ejercicios_Extra_Git> git add .\prueba.txt
+PS C:\Users\Admin\Desktop\Git\Lyfter_Learning\DUAD\Basic Python\Git\Ejercicios_Extra_Git> git commit -m "Ejercicio git extra 2"
+[experimentacion ce13ee1] Ejercicio git extra 2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 DUAD/Basic Python/Git/Ejercicios_Extra_Git/prueba.txt
+PS C:\Users\Admin\Desktop\Git\Lyfter_Learning\DUAD\Basic Python\Git\Ejercicios_Extra_Git> git push --set-upstream origin experimentacion
+Enumerating objects: 69, done.
+Counting objects: 100% (68/68), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (42/42), done.
+Writing objects: 100% (46/46), 9.03 KiB | 840.00 KiB/s, done.
+Total 46 (delta 20), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (20/20), completed with 14 local objects.
+remote:
+remote: Create a pull request for 'experimentacion' on GitHub by visiting:
+remote:      https://github.com/josean111/Lyfter_Learning/pull/new/experimentacion
+remote:
+To https://github.com/josean111/Lyfter_Learning.git
+ * [new branch]      experimentacion -> experimentacion
+branch 'experimentacion' set up to track 'origin/experimentacion'.
+PS C:\Users\Admin\Desktop\Git\Lyfter_Learning>  gh pr create --base past_exercises --head experimentacion --title "Ejercicio de Git Extra 2"
+
+Creating pull request for experimentacion into past_exercises in josean111/Lyfter_Learning
+
+? Body <Received>
+? What's next? Submit
+https://github.com/josean111/Lyfter_Learning/pull/7
