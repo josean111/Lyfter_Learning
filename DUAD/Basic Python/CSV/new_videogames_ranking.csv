@@ -1,11 +1,31 @@
-Name,Genre,Developer,Rating
-Grand Theft Auto IV,Action,Rockstar Games,M
-The Elder Scrolls IV: Oblivion,RPG,Bethesda Game Studios,M
-Tony Hawk's Pro Skater 2,Sports,Neversoft,T
-Minecraft,Sandbox,Mojang Studios,E10+
-The Legend of Zelda: Breath of the Wild,Adventure,Nintendo EPD,E10+
-God of War,Action,Santa Monica Studio,M
-Super Mario Odyssey,Adventure,Nintendo EPD,E10+
+Name,Genre,Developer,ESRB_Rating
+Grand Theft Auto V,Action-Adventure,Rockstar Games,M
+Grand Theft Auto IV,Action-Adventure,Rockstar Games,M
+Red Dead Redemption 2,Action-Adventure,Rockstar Games,M
+The Witcher 3 Wild Hunt,Role-Playing,CD Projekt Red,M
+Cyberpunk 2077,Role-Playing,CD Projekt Red,M
+Minecraft,Survival,Mojang Studios,E10+
+Minecraft Dungeons,Dungeon Crawler,Mojang Studios,E10+
+The Legend of Zelda Breath of the Wild,Adventure,Nintendo,E10+
+Super Mario Odyssey,Platformer,Nintendo,E10+
+Mario Kart 8 Deluxe,Racing,Nintendo,E
+God of War,Action-Adventure,Santa Monica Studio,M
+God of War Ragnarok,Action-Adventure,Santa Monica Studio,M
+The Last of Us Part I,Action-Adventure,Naughty Dog,M
+The Last of Us Part II,Action-Adventure,Naughty Dog,M
+Uncharted 4 A Thiefs End,Action-Adventure,Naughty Dog,T
+Resident Evil 2,Horror,Capcom,M
+Resident Evil 4,Horror,Capcom,M
+Street Fighter 6,Fighting,Capcom,T
+FIFA 23,Sports,EA Sports,E
+EA Sports FC 24,Sports,EA Sports,E
+Call of Duty Modern Warfare II,Shooter,Infinity Ward,M
+Call of Duty Modern Warfare III,Shooter,Infinity Ward,M
+Halo Infinite,Shooter,343 Industries,T
+Forza Horizon 5,Racing,Playground Games,E
+Forza Horizon 4,Racing,Playground Games,E
 The Sims 4,Simulation,Maxis,T
-Overwatch 2,Shooter,Blizzard Entertainment,T
-Red Dead Redemption 2,Action,Rockstar Games,M
+SimCity,Simulation,Maxis,E10+
+Animal Crossing New Horizons,Simulation,Nintendo,E
+Among Us,Social Deduction,Innersloth,E10+
+Fall Guys,Platformer,Mediatonic,E

@@ -1,40 +1,68 @@
 # Cree un programa que lea nombres de canciones de un archivo (línea por línea) y guarde en otro archivo los mismos nombres ordenados alfabéticamente.
 
-with open("songs.txt", 'r', encoding='utf-8') as file:
-    lines = file.readlines()
+def read_songs(filename):
+    with open(filename, "r", encoding="utf-8") as file:
+        lines = file.readlines()
 
-temporary_list = []
+    songs = []
 
-for line in lines:
-    word = line.strip()
-    flag_index = -1
-    flag_order = ""
+    for line in lines:
+        song = line.strip()
+        songs.append(song)
 
-    if len(temporary_list) == 0:
-        temporary_list.append(word)
-        continue
+    return songs
 
-    for i in range(len(temporary_list)):
-        word2 = temporary_list[i]
 
-        if word > word2 and (flag_order == "" or flag_order == "MAYOR"):
-            flag_index = i + 1
-            flag_order = "MAYOR"
+def sort_songs(songs):
+    temporary_list = []
 
-        elif word < word2 and (flag_order == "" or flag_order == "MENOR"):
-            flag_index = i
-            flag_order = "MENOR"
-            break
+    for word in songs:
+        flag_index = -1
+        flag_order = ""
 
-        elif word == word2:
-            flag_index = i
-            break
+        if len(temporary_list) == 0:
+            temporary_list.append(word)
+            continue
 
-    if flag_index != -1:
-        temporary_list.insert(flag_index, word)
-    else:
-        temporary_list.append(word)
+        for i in range(len(temporary_list)):
+            word2 = temporary_list[i]
 
-with open("songs_sorted.txt", 'w', encoding='utf-8') as file:
-    for song in temporary_list:
-        file.write(song + "\n")
+            if word > word2 and (
+                flag_order == "" or flag_order == "GREATER"
+            ):
+                flag_index = i + 1
+                flag_order = "GREATER"
+
+            elif word < word2 and (
+                flag_order == "" or flag_order == "LESSER"
+            ):
+                flag_index = i
+                flag_order = "LESSER"
+                break
+
+            elif word == word2:
+                flag_index = i
+                break
+
+        if flag_index != -1:
+            temporary_list.insert(flag_index, word)
+        else:
+            temporary_list.append(word)
+
+    return temporary_list
+
+
+def write_songs(filename, songs):
+    with open(filename, "w", encoding="utf-8") as file:
+        for song in songs:
+            file.write(song + "\n")
+
+
+def main():
+    songs = read_songs("songs.txt")
+    sorted_songs = sort_songs(songs)
+    write_songs("songs_sorted.txt", sorted_songs)
+
+
+if __name__ == "__main__":
+    main()
