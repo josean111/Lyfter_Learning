@@ -1,1 +1,2 @@
 Este es un mensaje de prueba para Git.
+Actualizando el formato y corrogiendo el mensaje para el tercer ejercicio de Git Extra 3 de arreglo de errores menores en un nuevo branch
