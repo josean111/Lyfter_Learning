@@ -14,6 +14,10 @@ def read_pokemon(file_path):
         print(f"Error: The file '{file_path}' does not exist.")
         return
 
+def read_pokemon(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        pokemon_list = json.load(file)
+
     for pokemon in pokemon_list:
         print(f"Name: {pokemon['name']}")
         print(f"Type: {pokemon['type']}")
@@ -26,3 +30,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+read_pokemon('pokemon_list.json')

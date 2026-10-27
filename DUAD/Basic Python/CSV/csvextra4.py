@@ -74,3 +74,19 @@ def main():
 
 if __name__ == "__main__":
     main()
+import csv
+
+def read_games(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        reader = csv.reader(file)
+        header = next(reader)
+
+        developer = input("Give me the name of a videogame developer: ")
+
+        print(f"Games developed by {developer}:")
+
+        for line in reader:
+            if line[2].lower() == developer.lower():
+                print(f"- {line[0]} (Rating: {line[3]}, Genre: {line[1]})")
+
+read_games('new_videogames_ranking.csv')

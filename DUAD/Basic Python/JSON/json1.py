@@ -14,6 +14,13 @@ def read_pokemon(file_path):
     except FileNotFoundError:
         print(f"Error: File '{file_path}' does not exist.")
         return []
+#Investigue cómo leer y escribir archivos JSON en Python aquí.
+
+import json
+
+def read_pokemon(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        pokemon_list = json.load(file)
 
     for pokemon in pokemon_list:
         print(pokemon)
@@ -86,3 +93,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+add_pokemon('pokemon_list.json')
