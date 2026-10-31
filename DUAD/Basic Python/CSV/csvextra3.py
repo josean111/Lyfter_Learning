@@ -75,3 +75,22 @@ def main():
 
 if __name__ == "__main__":
     main()
+import csv
+
+def read_games(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        reader = csv.reader(file)
+        header = next(reader)
+        genres = {}
+        
+        for line in reader:
+            genre = line[1]
+            if genre in genres:
+                genres[genre] += 1
+            else:
+                genres[genre] = 1
+    print("Genre Totals:")
+    for genre in sorted(genres):
+        print(f"{genre}: {genres[genre]}")
+
+read_games('new_videogames_ranking.csv')

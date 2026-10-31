@@ -40,3 +40,14 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def search_pokemon(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        pokemon_list = json.load(file)
+        pokemon_type = input("Enter the type of Pokemon you want to search: ")
+        print("The Pokemon of that type are:")
+        for pokemon in pokemon_list:
+            if pokemon['type'].lower() == pokemon_type.lower():
+                print(pokemon['name'])
+
+search_pokemon('pokemon_list.json')
