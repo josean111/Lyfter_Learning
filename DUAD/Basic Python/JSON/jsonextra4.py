@@ -22,7 +22,7 @@ def average_level(file_path):
     total_levels = {}
     pokemon_count = {}
     for pokemon in pokemon_list:
-        pokemon_type = pokemon['type']https://github.com/josean111/Lyfter_Learning/pull/10/conflict?name=DUAD%252FBasic%2BPython%252FJSON%252Fjsonextra4.py&base_oid=c75593d877ca6800347d5f9fa0a357dcef730995&head_oid=d6254e657dd220f8389d5aa02d765c3ef332afe3
+        pokemon_type = pokemon['type']
         level = pokemon['level']
         if pokemon_type in total_levels:
             total_levels[pokemon_type] += level
