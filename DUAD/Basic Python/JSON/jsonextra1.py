@@ -4,6 +4,15 @@
 
 
 import json
+JSON_FILE = "pokemon_list.json"
+
+def read_pokemon(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            pokemon_list = json.load(file)
+    except FileNotFoundError:
+        print(f"Error: The file '{file_path}' does not exist.")
+        return
 
 def read_pokemon(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
@@ -15,4 +24,10 @@ def read_pokemon(file_path):
         print(f"Level: {pokemon['level']}")
         print()
 
+def main():
+    read_pokemon(JSON_FILE)
+
+
+if __name__ == "__main__":
+    main()
 read_pokemon('pokemon_list.json')

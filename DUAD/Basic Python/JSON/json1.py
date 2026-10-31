@@ -1,3 +1,19 @@
+# Investigue cómo leer y escribir archivos JSON en Python aquí.
+# Cree un programa que permita agregar un Pokémon nuevo al archivo de la lección de Manejo de JSON.
+# Debe leer el archivo para importar los Pokémones existentes.
+# Luego debe pedir la información del Pokémon a agregar.
+# Finalmente debe guardar el nuevo Pokémon en el archivo.
+
+import json
+JSON_FILE = "pokemon_list.json"
+
+def read_pokemon(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            pokemon_list = json.load(file)
+    except FileNotFoundError:
+        print(f"Error: File '{file_path}' does not exist.")
+        return []
 #Investigue cómo leer y escribir archivos JSON en Python aquí.
 
 import json
@@ -14,6 +30,8 @@ def read_pokemon(file_path):
 
 def add_pokemon(file_path):
     pokemon_list = read_pokemon(file_path)
+    if not pokemon_list:
+        return
 
     print("\nAdd a new Pokemon")
 
@@ -69,4 +87,10 @@ def add_pokemon(file_path):
     read_pokemon(file_path)
 
 
+def main():
+    add_pokemon(JSON_FILE)
+
+
+if __name__ == "__main__":
+    main()
 add_pokemon('pokemon_list.json')

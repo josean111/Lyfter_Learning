@@ -7,6 +7,20 @@
 
 import csv
 
+INPUT_FILE = "new_videogames_ranking.csv"
+OUTPUT_FILE = "new_videogames_ranking_by_tabs.csv"
+
+def read_videogames_ranking(file_path):
+    video_games = []
+
+    with open(file_path, "r", encoding="utf-8", newline="") as file:
+        reader = csv.DictReader(file)
+
+        for row in reader:
+            video_games.append(row)
+
+    return video_games
+
 def save_videogames_ranking(file_path, data):
     with open(file_path, 'w', encoding='utf-8', newline='') as file:
         headers = data[0].keys()
@@ -14,6 +28,12 @@ def save_videogames_ranking(file_path, data):
         writer.writeheader()
         writer.writerows(data)
 
+def main():
+    video_games = read_videogames_ranking(INPUT_FILE)
+    save_videogames_ranking(OUTPUT_FILE, video_games)
+
+if __name__ == "__main__":
+    main()
 video_games = [
     {
         "Name": "Grand Theft Auto IV",

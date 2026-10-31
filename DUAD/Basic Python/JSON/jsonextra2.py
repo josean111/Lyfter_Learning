@@ -14,6 +14,32 @@
 
 
 import json
+JSON_FILE = "pokemon_list.json"
+
+def search_pokemon(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            pokemon_list = json.load(file)
+    except FileNotFoundError:
+        print(f"Error: File '{file_path}' does not exist.")
+        return
+
+    pokemon_type = input("Enter the type of Pokemon you want to search: ")
+    print("The Pokemon of that type are:")
+    found = False
+    for pokemon in pokemon_list:
+        if pokemon['type'].lower() == pokemon_type.lower():
+            print(pokemon['name'])
+            found = True
+    if not found:
+        print("No Pokemon found")
+
+def main():
+    search_pokemon(JSON_FILE)
+
+
+if __name__ == "__main__":
+    main()
 
 def search_pokemon(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:

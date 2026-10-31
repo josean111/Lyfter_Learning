@@ -1,0 +1,44 @@
+Sistema de Control de Estudiantes 🎓
+Por su extensa experiencia en resolución de problemas y manejo de Python, el Instituto de Estudios Generales de Lyfter confía en su trabajo y le encarga desarrollar un sistema de gestión de estudiantes. Deberá aplicar los conceptos aprendidos a lo largo del programa: funciones, módulos, estructuras de datos, manejo de archivos y excepciones, todo integrado en un sistema con interfaz por línea de comandos.
+Instrucciones📋
+Lea todos los requerimientos y detalles técnicos cuidadosamente antes de escribir código.
+Divida los requerimientos en tareas más pequeñas (dividir para conquistar).
+Anote los requerimientos que no sabe cómo desarrollar con exactitud.
+Divida la lógica del programa en funciones pequeñas. Cada función debería tener una sola responsabilidad.
+Escriba código limpio con identificadores específicos y fáciles de entender.
+Consulte cualquier duda que surja.
+Escriba todo el código en inglés.
+Requerimientos 📝
+Deberá crear un programa que tenga una interfaz por línea de comando (es decir, a base de inputs y prints). Este debe tener un menú que permita acceder a todas las funciones:
+Deberá validar que se ingrese una opción válida del menú.
+Ingresar información de n cantidad de estudiantes, uno por uno. Cada estudiante debe incluir:
+Nombre completo
+Sección (ejemplo: 11B)
+Nota de español
+Nota de inglés
+Nota de sociales
+Nota de ciencias
+Deberá validar que las notas ingresadas sean válidas (números de 0 a 100) y seguir pidiéndolas hasta que sean válidas.
+Ver la información de todos los estudiantes ingresados.
+Ver el top 3 de los estudiantes con la mejor nota promedio (es decir, el promedio de nota de español + nota de inglés + nota de sociales + nota de ciencias).
+Ver la nota promedio entre las notas de todos los estudiantes (es decir, el promedio de notas de cada uno).
+Exportar todos los datos actuales a un archivo CSV.
+Importar los datos de un archivo CSV previamente exportado. Si no hay un archivo previamente exportado, debe informárselo al usuario.
+Estructura del Proyecto 🗂️
+Deberá dividir el proyecto en los siguientes módulos:
+main: tendrá el punto de entrada del programa.
+menu: tendrá toda la lógica relacionada al menú de opciones.
+actions: tendrá toda la lógica de las acciones del menú, excepto las de exportar e importar datos.
+data: tendrá toda la lógica de exportación e importación de datos.
+Requerimientos Extra (Opcionales) ⭐
+Agregue una opción nueva al menú que permita eliminar a un estudiante usando su nombre y sección. Esta debe validar:
+Si el estudiante existe o no.
+Confirmar con el usuario antes de eliminar.
+Muestre los estudiantes reprobados, enlistando todos los que tengan al menos una materia con nota menor a 60.
+Añada una opción al menú: Ver estudiantes reprobados.
+Muestre el nombre, sección y las materias reprobadas con sus notas.
+Mejore el sistema agregando el siguiente manejo de errores:
+Que el nombre completo no esté vacío ni tenga números.
+Que la sección siga el formato válido (ejemplo: 10A, 11B, etc.).
+Que no se permita ingresar dos estudiantes con el mismo nombre y sección (sin duplicados).
+Tip: Puede crear las funciones is_valid_name, is_valid_section y student_exists.

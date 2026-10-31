@@ -1,0 +1,95 @@
+git log
+
+commit adf275a141847e3eb1d27b1f4b7276718e6e14c1 (HEAD -> past_exercises)
+Author: josean111 <josean.111@gmail.com>
+Date:   Thu Oct 22 02:07:47 2026 -0600
+
+    Correcting main methods on exercises since Functions
+
+What? I added main method and created a main file, updated the INPUT_FILE variable that I was not using as part of the standard
+Why? Improvements from comments on review of the exercises and consistency
+======================================================================================================================================
+
+commit 0f1b0ff13872a6a2e8fadf39b2130122d635a066
+Author: josean111 <josean.111@gmail.com>
+Date:   Wed Oct 21 15:40:43 2026 -0600
+
+    Ejercicios de Python Basico, correciones y cambios de nombre
+
+What? I added main method and created a main file, updated the INPUT_FILE variable that I was not using as part of the standard
+Why? Improvements from comments on review of the exercises and consistency
+======================================================================================================================================
+
+commit e8736f9251a0df10195b4e0c3786d43bd13a1d3b (origin/past_exercises)
+Author: josean111 <josean.111@gmail.com>
+Date:   Wed Oct 21 01:58:48 2026 -0600
+
+    Ejercicios de Python Basico
+What? I added all the python files from the lessons we have been doing just like asked in Git Exercise 1 so we can have all in the repo
+Why? Practice and learn git workflow and commands, as well as PR practice and push
+======================================================================================================================================
+
+commit 15239d5cac5a57509b38bc5626ddc31dc8ca282d
+Author: josean111 <josean.111@gmail.com>
+Date:   Wed Oct 21 01:11:58 2026 -0600
+
+    Ejercicios de Diagramas, Pseudocodigo y Extras de ambos
+What? I created text files from the pdf files on diagrams and pseudocode lessons so I can upload instead of a PDF file so we can have all in the repo
+Why? Practice and learn git workflow and commands, as well as PR practice and push
+======================================================================================================================================
+commit 8070ec111ef203e03d9daca9fc82876b2b33e8b7
+Author: josean111 <josean.111@gmail.com>
+Date:   Wed Oct 21 00:01:27 2026 -0600
+
+    Ejercicios de Terminales y Terminales extra
+What? I added all the pdf files since they contain images of the commands executed, created txt files when possible so we can have all in the repo
+Why? Practice and learn git workflow and commands, as well as PR practice and push
+======================================================================================================================================
+
+commit 454646a14d3297595a63202855ff68098d5ab321
+Author: josean111 <josean.111@gmail.com>
+Date:   Tue Oct 20 23:39:01 2026 -0600
+
+    Ejercicios de Algoritmos extra
+What? I added all the image files fro the diagrams so we can have all in the repo
+Why? Practice and learn git workflow and commands, as well as PR practice and push
+======================================================================================================================================
+
+commit 3fb86a29b03a5dbf3f70dca9b74e2653568b6b89
+Author: josean111 <josean.111@gmail.com>
+Date:   Tue Oct 20 23:21:57 2026 -0600
+
+    Ejercicios de Algoritmos
+What? I added all the image files fro the diagrams so we can have all in the repo
+Why? Practice and learn git workflow and commands, as well as PR practice and push
+======================================================================================================================================
+
+commit 54dbb29adfd197f257452da685681ca782c6eab5 (origin/main, origin/HEAD, main)
+Merge: f0dd2a3 9160528
+Author: Jose Zuniga <josean111@users.noreply.github.com>
+Date:   Tue Oct 20 08:17:57 2026 -0600
+
+    Merge pull request #1 from josean111/basic_python
+
+    Hello World on Python
+What? Corrected the PR so it can heave the latest
+Why? Practice and learn git workflow and commands, as well as PR practice and push
+======================================================================================================================================
+
+commit 9160528606abc3f15aba478d1ea5491512941a94 (origin/basic_python, basic_python)
+Author: josean111 <josean.111@gmail.com>
+Date:   Tue Oct 20 08:11:22 2026 -0600
+
+    Hello World on Python
+What? Made a mistake in the order for the PR, had to start over
+Why? Practice and learn git workflow and commands, as well as PR practice and push
+======================================================================================================================================
+
+commit f0dd2a36099f7374ac8b9373934131e96ce27b38
+Author: Jose Zuniga <josean111@users.noreply.github.com>
+Date:   Tue Oct 20 08:02:53 2026 -0600
+
+    Initial commit
+What? I added the hello_world.py first file in the repo
+Why? Practice and learn git workflow and commands, as well as PR practice and push
+======================================================================================================================================
