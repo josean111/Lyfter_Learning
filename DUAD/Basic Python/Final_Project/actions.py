@@ -11,9 +11,6 @@ def student_exists(student_list, name, section):
         return True
     return False
 
-def student_exists_in_csv(csv_student_data, name, section):
-    return student_exists(csv_student_data, name, section)
-
 def is_valid_name(name):
     if name.strip() == "":
         return False, "Student name cannot be empty."
@@ -78,8 +75,7 @@ def validate_grades(grade_information):
 
     return True, validated_grades, ""
 
-
-def add_student(student_list, student_information, csv_student_data):
+def add_student(student_list, student_information):
     required_fields = ["full_name","class_num","spanish_grade","english_grade","socials_grade","science_grade"]
 
     for field in required_fields:
@@ -99,11 +95,7 @@ def add_student(student_list, student_information, csv_student_data):
     if student_exists(student_list, name, section):
         return student_list, False, "Cannot add student. A student with the same name and section already exists."
 
-    if student_exists_in_csv(csv_student_data, name, section):
-        return student_list, False, "Cannot add student. A student with the same name and section already exists in the CSV file. Import the CSV data before continuing."
-
     is_valid, validated_grades, error_message = validate_grades(student_information)
-
     if not is_valid:
         return student_list, False, error_message
 
@@ -111,7 +103,7 @@ def add_student(student_list, student_information, csv_student_data):
     student_list.append(student)
     return student_list, True, f"Student '{name}' added successfully."
 
-def modify_student(student_list, name, section, new_information, modify_option, csv_student_data):
+def modify_student(student_list, name, section, new_information, modify_option):
     current_student = find_student(student_list, name, section)
 
     if current_student is None:
@@ -138,9 +130,6 @@ def modify_student(student_list, name, section, new_information, modify_option, 
         if identity_changed:
             if find_student(student_list, new_name, new_section, current_student) is not None:
                 return student_list, False, "Cannot modify student. Another student with the same name and section already exists in memory."
-
-            if student_exists_in_csv(csv_student_data, new_name, new_section):
-                return student_list, False, "Cannot modify student. A student with the same name and section already exists in the CSV file."
 
         validated_information["full_name"] = new_name
         validated_information["class_num"] = new_section
@@ -188,6 +177,13 @@ def combine_student_data(student_list, csv_student_data, csv_overwrite):
             existing_student.update(csv_student)
 
     return combine_students
+
+def has_memory_only_students(student_list, imported_students):
+    for student in student_list:
+        if not student_exists(imported_students,student["full_name"],student["class_num"]):
+            return True
+
+    return False
 
 def show_student(student_list):
     if len(student_list) == 0:

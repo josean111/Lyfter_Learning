@@ -187,11 +187,13 @@ def remove_student_menu():
 
 def confirm_import_menu():
     print("\nWARNING: IMPORTING CSV DATA WILL UPDATE YOUR CURRENT STUDENT LIST.")
-    print("Existing matching students will be updated using the CSV information.")
+    print("Students already in memory that also exist in CSV will be overwritten.")
+    print("This includes their student information and grades.")
     print("Students that exist only in memory will be preserved.")
-    print("Your unsaved changes to matching students may be overwritten.")
+    print("Your unsaved changes to matching students may be lost.")
 
     return confirm_action_menu("Do you want to continue with the import?")
+
 
 def confirm_exit_menu(export_available):
     print("\nWARNING: You have unsaved student information.")
