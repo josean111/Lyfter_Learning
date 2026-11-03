@@ -249,6 +249,7 @@ def top_three_students(student_list):
 
     for i in range(number_of_students):
         student = students_temp[i]
+
         print("\nPosition: ", i + 1)
         print("Name: ", student["full_name"])
         print("Section: ", student["class_num"])
