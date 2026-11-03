@@ -93,7 +93,6 @@ def export_students(student_list):
 
     except PermissionError:
         return False, "Export failed: Permission denied. You do not have permission to write to the CSV file."
-
     except FileNotFoundError:
         return False, "Export failed: The destination directory does not exist."
 

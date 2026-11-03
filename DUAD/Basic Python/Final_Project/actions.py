@@ -259,7 +259,6 @@ def show_failed_students(student_list):
     if len(student_list) == 0:
         print("There are no students yet.\n")
         return
-
     failed_students_found = False
     for student in student_list:
         failed_subjects = []

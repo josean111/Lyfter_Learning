@@ -218,7 +218,6 @@ def main():
                 else:
                     print("\nReturning to the main menu.\n")
                     continue
-
             print("\nGoodbye!")
             break
 

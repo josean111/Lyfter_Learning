@@ -155,7 +155,6 @@ def get_grade(subject):
 
         return grade
 
-
 def student_grades_menu():
     print("\n--- Student Grades ---")
     grades = {}
@@ -164,7 +163,6 @@ def student_grades_menu():
     grades["socials_grade"] = get_grade("Social Studies")
     grades["science_grade"] = get_grade("Science")
     return grades
-
 
 def confirm_action_menu(prompt):
     while True:
@@ -184,7 +182,6 @@ def confirm_action_menu(prompt):
 
         return False
 
-
 def remove_student_menu():
     return confirm_action_menu("\nAre you sure you want to remove this student?")
 
@@ -195,7 +192,6 @@ def confirm_import_menu():
     print("Your unsaved changes to matching students may be overwritten.")
 
     return confirm_action_menu("Do you want to continue with the import?")
-
 
 def confirm_exit_menu(export_available):
     print("\nWARNING: You have unsaved student information.")
