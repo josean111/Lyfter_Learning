@@ -1,6 +1,4 @@
-
 import actions
-
 
 def student_main_menu():
     menu_string = (
@@ -20,13 +18,11 @@ def student_main_menu():
 
     while True:
         user_input = input(menu_string).strip()
-
         try:
             if user_input == "":
                 raise ValueError("Invalid option: Selection cannot be empty.")
 
             option = int(user_input)
-
             if option < 0 or option > 9:
                 raise ValueError("Invalid option. Please select a number from 0 to 9.")
 
@@ -47,17 +43,14 @@ def student_main_menu():
             else:
                 print("Invalid input. Please enter a valid menu number.")
 
-
 def student_add_menu():
     while True:
         user_input = input("\nHow many students would you like to add? ").strip()
-
         try:
             if user_input == "":
                 raise ValueError("Invalid quantity: The number of students cannot be empty.")
 
             number_of_students = int(user_input)
-
             if number_of_students < 1:
                 raise ValueError("Invalid quantity: The number of students must be at least 1.")
 
@@ -78,50 +71,32 @@ def student_add_menu():
             else:
                 print("Invalid input. Please enter a valid positive integer.")
 
-
 def student_name_menu():
     while True:
         name = input("\nEnter the student's full name: ").strip()
-
         is_valid, error_message = actions.is_valid_name(name)
-
         if is_valid:
             return name
-
         print(error_message)
-
 
 def student_section_menu():
     while True:
         section = input("\nEnter the student's section (Example: 11B): ").strip()
-
         is_valid, error_message = actions.is_valid_section(section)
-
         if is_valid:
             return section.upper()
-
         print(error_message)
-
 
 def student_information_menu():
     print("\n--- Student Information ---")
-
-    student_information = {
-        "full_name": student_name_menu(),
-        "class_num": student_section_menu()
-    }
-
+    student_information = {"full_name": student_name_menu(),"class_num": student_section_menu()}
     return student_information
 
-
 def student_identity_menu():
-    print("\n--- Student Identification ---")
-
+    print("\n--- Student Information ---")
     name = student_name_menu()
     section = student_section_menu()
-
     return name, section
-
 
 def student_modify_menu():
     menu_string = (
@@ -135,13 +110,11 @@ def student_modify_menu():
 
     while True:
         user_input = input(menu_string).strip()
-
         try:
             if user_input == "":
                 raise ValueError("Invalid option: Selection cannot be empty.")
 
             option = int(user_input)
-
             if option < 0 or option > 3:
                 raise ValueError("Invalid option. Please select a number from 0 to 3.")
 
@@ -163,20 +136,17 @@ def student_modify_menu():
 def get_grade(subject):
     while True:
         user_input = input(f"Enter the {subject} grade (0-100): ").strip()
-
         if user_input == "":
             print(f"{subject} grade cannot be empty.")
             continue
 
         try:
             grade = float(user_input)
-
         except ValueError:
             if user_input.isalpha():
                 print(f"Invalid {subject} grade. Letters are not allowed. Please enter a numeric value.")
             else:
                 print(f"Invalid {subject} grade. Please enter a valid number.")
-
             continue
 
         if not actions.is_valid_grade(grade):
@@ -188,25 +158,20 @@ def get_grade(subject):
 
 def student_grades_menu():
     print("\n--- Student Grades ---")
-
     grades = {}
-
     grades["spanish_grade"] = get_grade("Spanish")
     grades["english_grade"] = get_grade("English")
     grades["socials_grade"] = get_grade("Social Studies")
     grades["science_grade"] = get_grade("Science")
-
     return grades
 
 
 def confirm_action_menu(prompt):
     while True:
-        confirmation = input(prompt + " (Y/N): ").strip().lower()
-
+        confirmation = input(prompt + " (Y)es/(N)o): ").strip().lower()
         try:
             if confirmation == "":
                 raise ValueError("Invalid confirmation: Selection cannot be empty.")
-
             if confirmation not in ["yes", "y", "no", "n"]:
                 raise ValueError("Invalid confirmation. Please enter yes (Y) or no (N).")
 
@@ -222,7 +187,6 @@ def confirm_action_menu(prompt):
 
 def remove_student_menu():
     return confirm_action_menu("\nAre you sure you want to remove this student?")
-
 
 def confirm_import_menu():
     print("\nWARNING: IMPORTING CSV DATA WILL UPDATE YOUR CURRENT STUDENT LIST.")
@@ -243,13 +207,11 @@ def confirm_exit_menu(export_available):
             print("3. Return to menu")
 
             user_input = input("Select the option: ").strip()
-
             try:
                 if user_input == "":
                     raise ValueError("Invalid option: Selection cannot be empty.")
 
                 option = int(user_input)
-
                 if option < 1 or option > 3:
                     raise ValueError("Invalid option. Please select a number from 1 to 3.")
 
@@ -272,9 +234,7 @@ def confirm_exit_menu(export_available):
 
     print("\nThe existing CSV file has not been imported.")
     print("Exporting now could overwrite its saved student information.")
-
     confirmation = confirm_action_menu("Are you sure you want to exit without saving?")
-
     if confirmation:
         return "discard"
 

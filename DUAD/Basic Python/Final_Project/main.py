@@ -1,12 +1,28 @@
-
 import menu
 import actions
 import data
 
+def export_current_data(student_list, csv_data_imported):
+    latest_csv_data, csv_file_exists, error_message = data.load_csv_student_data()
+
+    if csv_file_exists and error_message:
+        return False, error_message, []
+
+    if csv_data_imported:
+        students_to_export = []
+
+        for student in student_list:
+            students_to_export.append(student.copy())
+
+    else:
+        students_to_export = actions.combine_student_data(student_list,latest_csv_data,False)
+
+    export_successful, error_message = data.export_students(students_to_export)
+    return export_successful, error_message, students_to_export
+
 
 def main():
     student_list = []
-
     csv_student_data, csv_file_exists, error_message = data.load_csv_student_data()
 
     if csv_file_exists and error_message:
@@ -29,37 +45,34 @@ def main():
 
     while True:
         option = menu.student_main_menu()
-
         if option == 1:
             number_of_students = menu.student_add_menu()
             new_students_added = 0
 
             while new_students_added < number_of_students:
                 print(f"\nStudent {new_students_added + 1} of {number_of_students}")
-
                 student_information = menu.student_information_menu()
-
                 csv_student_data, csv_file_exists, error_message = data.load_csv_student_data()
 
                 if csv_file_exists and error_message:
                     print("\n" + error_message)
-                    print("Student registration cannot continue until the CSV file is corrected.")
+                    print("Adding a student cannot continue until the CSV file is corrected.")
                     continue
 
-                if actions.student_exists(student_list, student_information["full_name"], student_information["class_num"]):
+                name = student_information["full_name"]
+                section = student_information["class_num"]
+
+                if actions.student_exists(student_list, name, section):
                     print("Cannot add student. A student with the same name and section already exists.")
                     continue
 
-                if actions.student_exists_in_csv(csv_student_data, student_information["full_name"], student_information["class_num"]):
+                if actions.student_exists_in_csv(csv_student_data, name, section):
                     print("Cannot add student. A student with the same name and section already exists in the CSV file. Import the CSV data before continuing.")
                     continue
 
                 student_grades = menu.student_grades_menu()
-
                 student_information.update(student_grades)
-
                 student_list, student_added, error_message = actions.add_student(student_list, student_information, csv_student_data)
-
                 print(error_message)
 
                 if student_added:
@@ -72,26 +85,22 @@ def main():
                 continue
 
             name, section = menu.student_identity_menu()
-
             if not actions.student_exists(student_list, name, section):
                 print("Student not found. No information was modified.\n")
                 continue
 
             csv_student_data, csv_file_exists, error_message = data.load_csv_student_data()
-
             if csv_file_exists and error_message:
                 print("\n" + error_message)
                 print("Student modification cannot continue until the CSV file is corrected.")
                 continue
 
             modify_option = menu.student_modify_menu()
-
             if modify_option == 0:
                 print("Student modification cancelled.\n")
                 continue
 
             new_information = {}
-
             if modify_option == 1 or modify_option == 3:
                 new_information = menu.student_information_menu()
 
@@ -99,17 +108,8 @@ def main():
                 new_grades = menu.student_grades_menu()
                 new_information.update(new_grades)
 
-            student_list, student_modified, error_message = actions.modify_student(
-                student_list,
-                name,
-                section,
-                new_information,
-                modify_option,
-                csv_student_data
-            )
-
+            student_list, student_modified, error_message = actions.modify_student(student_list,name,section,new_information,modify_option,csv_student_data)
             print(error_message)
-
             if student_modified:
                 has_unsaved_changes = True
 
@@ -119,21 +119,17 @@ def main():
                 continue
 
             name, section = menu.student_identity_menu()
-
             if not actions.student_exists(student_list, name, section):
                 print("Student not found. No student was removed.\n")
                 continue
 
             confirmation = menu.remove_student_menu()
-
             if not confirmation:
                 print("Student removal cancelled.\n")
                 continue
 
-            student_list, student_removed, error_message = actions.remove_student(student_list, name, section)
-
+            student_list, student_removed, error_message = actions.remove_student(student_list,name,section)
             print(error_message)
-
             if student_removed:
                 has_unsaved_changes = True
 
@@ -147,34 +143,11 @@ def main():
             actions.show_average_grades(student_list)
 
         elif option == 7:
-            latest_csv_data, latest_csv_exists, error_message = data.load_csv_student_data()
-
-            if latest_csv_exists and error_message:
-                print("\n" + error_message)
-                print("Export failed. The existing CSV file could not be read safely.")
-                print("Correct the CSV file before exporting to prevent accidental data loss.\n")
-                continue
-
-            if csv_data_imported:
-                students_to_export = []
-
-                for student in student_list:
-                    students_to_export.append(student.copy())
-
-            else:
-                students_to_export = actions.merge_student_data(
-                    student_list,
-                    latest_csv_data,
-                    False
-                )
-
-            export_successful, error_message = data.export_students(students_to_export)
-
+            export_successful, error_message, students_to_export = export_current_data(student_list,csv_data_imported)
             print(error_message)
 
             if export_successful:
                 student_list = students_to_export
-
                 csv_student_data = []
 
                 for student in student_list:
@@ -198,28 +171,17 @@ def main():
                     print("Import cancelled. Your current student information was preserved.\n")
                     continue
 
-            student_list = actions.merge_student_data(
-                student_list,
-                imported_students,
-                True
-            )
-
+            student_list = actions.combine_student_data(student_list,imported_students,True)
             csv_student_data = []
-
             for student in imported_students:
                 csv_student_data.append(student.copy())
 
             csv_file_exists = True
             csv_data_imported = True
-
             has_unsaved_changes = False
 
             for student in student_list:
-                if not actions.student_exists(
-                    imported_students,
-                    student["full_name"],
-                    student["class_num"]
-                ):
+                if not actions.student_exists(imported_students,student["full_name"],student["class_num"]):
                     has_unsaved_changes = True
                     break
 
@@ -236,29 +198,7 @@ def main():
                 exit_option = menu.confirm_exit_menu(True)
 
                 if exit_option == "export":
-                    latest_csv_data, latest_csv_exists, error_message = data.load_csv_student_data()
-
-                    if latest_csv_exists and error_message:
-                        print("\n" + error_message)
-                        print("Export failed. Your changes are still in memory.")
-                        print("Returning to the main menu.\n")
-                        continue
-
-                    if csv_data_imported:
-                        students_to_export = []
-
-                        for student in student_list:
-                            students_to_export.append(student.copy())
-
-                    else:
-                        students_to_export = actions.merge_student_data(
-                            student_list,
-                            latest_csv_data,
-                            False
-                        )
-
-                    export_successful, error_message = data.export_students(students_to_export)
-
+                    export_successful, error_message, students_to_export = export_current_data(student_list,csv_data_imported)
                     print(error_message)
 
                     if export_successful:
@@ -281,7 +221,6 @@ def main():
 
             print("\nGoodbye!")
             break
-
 
 if __name__ == "__main__":
     main()

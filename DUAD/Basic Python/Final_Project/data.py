@@ -1,11 +1,8 @@
 import csv
 import actions
 
-
 CSV_FILE = "students.csv"
-
 HEADERS = ["full_name", "class_num", "spanish_grade", "english_grade", "socials_grade", "science_grade"]
-
 
 def load_csv_student_data():
     csv_student_data = []
@@ -21,7 +18,6 @@ def load_csv_student_data():
                 return [], True, "CSV file headers do not match the expected format."
 
             row_number = 1
-
             for row in reader:
                 row_number = row_number + 1
 
@@ -37,41 +33,30 @@ def load_csv_student_data():
 
                 name = row["full_name"].strip()
                 is_valid, error_message = actions.is_valid_name(name)
-
                 if not is_valid:
                     return [], True, f"CSV file row {row_number}: {error_message}"
 
                 section = row["class_num"].strip().upper()
                 is_valid, error_message = actions.is_valid_section(section)
-
                 if not is_valid:
                     return [], True, f"CSV file row {row_number}: {error_message}"
 
                 if actions.student_exists(csv_student_data, name, section):
                     return [], True, f"CSV file contains a duplicate student at row {row_number}: {name}, section {section}."
+                
+                grade_information = {"spanish_grade": row["spanish_grade"],"english_grade": row["english_grade"],"socials_grade": row["socials_grade"],"science_grade": row["science_grade"]}
+                is_valid, validated_grades, error_message = actions.validate_grades(grade_information)
+                if not is_valid:
+                    return [], True, f"CSV file row {row_number}: {error_message}"
 
                 student = {
                     "full_name": name,
-                    "class_num": section
+                    "class_num": section,
+                    "spanish_grade": validated_grades["spanish_grade"],
+                    "english_grade": validated_grades["english_grade"],
+                    "socials_grade": validated_grades["socials_grade"],
+                    "science_grade": validated_grades["science_grade"]
                 }
-
-                grade_fields = ["spanish_grade", "english_grade", "socials_grade", "science_grade"]
-
-                for grade_field in grade_fields:
-                    try:
-                        grade = float(row[grade_field])
-
-                    except ValueError:
-                        return [], True, f"CSV file row {row_number}: Invalid numeric value for '{grade_field}'."
-
-                    except TypeError:
-                        return [], True, f"CSV file row {row_number}: Invalid data type for '{grade_field}'."
-
-                    if not actions.is_valid_grade(grade):
-                        return [], True, f"CSV file row {row_number}: Grade for '{grade_field}' must be between 0 and 100."
-
-                    student[grade_field] = grade
-
                 csv_student_data.append(student)
 
     except FileNotFoundError:
@@ -88,7 +73,6 @@ def load_csv_student_data():
 
     return csv_student_data, True, ""
 
-
 def import_students():
     imported_students, file_exists, error_message = load_csv_student_data()
 
@@ -99,11 +83,9 @@ def import_students():
         return [], False, f"Import failed: {error_message}"
 
     if len(imported_students) == 0:
-        return [], False, f"There were no students to import from CSV."
-    else:
-        return imported_students, True, f"Successfully imported {len(imported_students)} students from CSV."
+        return [], False, "There were no students to import from CSV."
 
-
+    return imported_students, True, f"Successfully imported {len(imported_students)} students from CSV."
 
 def export_students(student_list):
     try:
