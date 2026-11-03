@@ -65,9 +65,6 @@ def load_csv_student_data():
     except PermissionError:
         return [], True, "CSV file could not be read because permission was denied. Check the file permissions and try again."
 
-    except UnicodeDecodeError:
-        return [], True, "CSV file could not be read because it contains an unsupported text encoding."
-
     except csv.Error:
         return [], True, "CSV file contains invalid formatting."
 
