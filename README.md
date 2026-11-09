@@ -1,4 +1,4 @@
-# Full Stack Developer Roadmap 2026
+# Full Stack Developer - Lyfter Program
 
 **Current Stage:** Python Intermediate  
 **Goal:** Full Stack Developer
