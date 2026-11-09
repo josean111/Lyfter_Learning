@@ -10,13 +10,13 @@ class Circle:
         self.radius = radius
 
     def get_area(self):
-        print(f"The area of the circle is {PI * (self.radius * self.radius)}")
+        PI * (self.radius * self.radius)
 
 def main():
     circle_1 = Circle(5)
-    circle_1.get_area()
+    print(f"The area of the circle is {circle_1.get_area()}")
     circle_2 = Circle(10)
-    circle_2.get_area()
+    print(f"The area of the circle is {circle_2.get_area()}")
 
 if __name__ == "__main__":
     main()
