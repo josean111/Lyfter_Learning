@@ -10,7 +10,7 @@ class Circle:
         self.radius = radius
 
     def get_area(self):
-        PI * (self.radius * self.radius)
+        return PI * (self.radius * self.radius)
 
 def main():
     circle_1 = Circle(5)
