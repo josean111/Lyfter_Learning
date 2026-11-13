@@ -4,7 +4,7 @@
 # Cada una de estas necesita los atributos respectivos para poder calcular el área y el perímetro.
 
 from abc import ABC, abstractmethod
-PI = 3.14
+from math import pi
 
 class Shape(ABC):
     @abstractmethod
@@ -17,7 +17,7 @@ class Shape(ABC):
 
 class Circle(Shape):
     def __init__(self, radius):
-        self.__radius = radius
+        self.set_radius(radius) # Reutilizo el setter para validar el radio desde el constructor
         print(f"I am a circle with a radius of {radius}")
 
     def get_radius(self):
@@ -25,19 +25,18 @@ class Circle(Shape):
 
     def set_radius(self, radius):
         if radius < 0:
-            print("Radius cannot be negative")
-            return
+            raise ValueError("Radius cannot be negative")
         self.__radius = radius
 
     def calculate_perimeter(self):
-        return (2 * (PI * self.__radius))
+        return (2 * (pi * self.__radius))
 
     def calculate_area(self):
-        return (PI * (self.__radius ** 2))
+        return (pi * (self.__radius ** 2))
 
 class Square(Shape):
     def __init__(self, side):
-        self.__side = side
+        self.set_side(side) # Reutilizo el setter para validar el lado desde el constructor
         print(f"I am a square with a side of {side}")
 
     def get_side(self):
@@ -45,8 +44,7 @@ class Square(Shape):
 
     def set_side(self, side):
         if side < 0:
-            print("Side cannot be negative")
-            return
+            raise ValueError("Side cannot be negative")
         self.__side = side
 
     def calculate_perimeter(self):
@@ -57,8 +55,8 @@ class Square(Shape):
 
 class Rectangle(Shape):
     def __init__(self, width, height):
-        self.__width = width
-        self.__height = height
+        self.set_width(width) # Reutilizo el setter para validar el ancho desde el constructor
+        self.set_height(height) # Reutilizo el setter para validar la altura desde el constructor
         print(f"I am a rectangle with a height of {height} and a width of {width}")
 
     def get_width(self):
@@ -66,8 +64,7 @@ class Rectangle(Shape):
 
     def set_width(self, width):
         if width < 0:
-            print("Width cannot be negative")
-            return
+            raise ValueError("Width cannot be negative")
         self.__width = width
 
     def get_height(self):
@@ -75,8 +72,7 @@ class Rectangle(Shape):
 
     def set_height(self, height):
         if height < 0:
-            print("Height cannot be negative")
-            return
+            raise ValueError("Height cannot be negative")
         self.__height = height
 
     def calculate_perimeter(self):
@@ -86,31 +82,57 @@ class Rectangle(Shape):
         return (self.__width * self.__height)
 
 def main():
-    circle = Circle(5)
-    print(f"Area: {circle.calculate_area()}")
-    print(f"Perimeter: {circle.calculate_perimeter()}")
-    circle.set_radius(10)
-    print(f"New radius: {circle.get_radius()}")
-    print(f"New Area: {circle.calculate_area()}")
-    print(f"New Perimeter: {circle.calculate_perimeter()}\n")
+    try:
+        circle = Circle(5)
+        print(f"Area: {circle.calculate_area()}")
+        print(f"Perimeter: {circle.calculate_perimeter()}")
+        circle.set_radius(10)
+        print(f"New radius: {circle.get_radius()}")
+        print(f"New Area: {round(circle.calculate_area(),2)}")
+        print(f"New Perimeter: {round(circle.calculate_perimeter(),2)}\n")
+    except ValueError as error:
+        print(f"Error: {error}")
 
-    square = Square(4)
-    print(f"Area: {square.calculate_area()}")
-    print(f"Perimeter: {square.calculate_perimeter()}")
-    square.set_side(8)
-    print(f"New side: {square.get_side()}")
-    print(f"New Area: {square.calculate_area()}")
-    print(f"New Perimeter: {square.calculate_perimeter()}\n")
+    try:
+        square = Square(4)
+        print(f"Area: {square.calculate_area()}")
+        print(f"Perimeter: {square.calculate_perimeter()}")
+        square.set_side(8)
+        print(f"New side: {square.get_side()}")
+        print(f"New Area: {square.calculate_area()}")
+        print(f"New Perimeter: {square.calculate_perimeter()}\n")
+    except ValueError as error:
+        print(f"Error: {error}")
 
-    rectangle = Rectangle(10, 5)
-    print(f"Area: {rectangle.calculate_area()}")
-    print(f"Perimeter: {rectangle.calculate_perimeter()}")
-    rectangle.set_height(2)
-    print(f"New height: {rectangle.get_height()}")
-    rectangle.set_width(3)
-    print(f"New width: {rectangle.get_width()}")
-    print(f"New Area: {rectangle.calculate_area()}")
-    print(f"New Perimeter: {rectangle.calculate_perimeter()}")
+    try:
+        rectangle = Rectangle(10, 5)
+        print(f"Area: {rectangle.calculate_area()}")
+        print(f"Perimeter: {rectangle.calculate_perimeter()}")
+        rectangle.set_height(2)
+        print(f"New height: {rectangle.get_height()}")
+        rectangle.set_width(3)
+        print(f"New width: {rectangle.get_width()}")
+        print(f"New Area: {rectangle.calculate_area()}")
+        print(f"New Perimeter: {rectangle.calculate_perimeter()}")
+    except ValueError as error:
+        print(f"Error: {error}")
+
+    try:
+        invalid_circle = Circle(-5)
+    except ValueError as error:
+        print(f"\nError: {error}")
+
+    try:
+        print()
+        invalid_square = Square(-4)
+    except ValueError as error:
+        print(f"Error: {error}")
+
+    try:
+        print()
+        invalid_rectangle = Rectangle(10, -5)
+    except ValueError as error:
+        print(f"Error: {error}")
 
 if __name__ == "__main__":
     main()
